@@ -24,6 +24,11 @@ namespace EF_lesson_4_1
                 {
                     Console.WriteLine("Name - {0}, Price - {1}, CompanyId - {2}", ph.Name, ph.Price, ph.CompanyId);
                 }
+                var phones3 = db.Phones.Where(p => p.CompanyId == 1).ToList().Where(p => p.Id == 2);
+                foreach (Phone ph in phones3)
+                {
+                    Console.WriteLine("p.Id = 2: Name - {0}, Price - {1}, CompanyId - {2}", ph.Name, ph.Price, ph.CompanyId);
+                }
                 Console.ReadLine();
             }
         }
